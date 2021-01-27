@@ -1,1 +1,7 @@
 Flask>=1.0,<=1.1.2
+flask_login
+flask_paginate
+matplotlib
+wordcloud
+jieba
+pandas

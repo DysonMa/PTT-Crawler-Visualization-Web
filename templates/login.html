@@ -1,0 +1,47 @@
+{% extends  "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/login.css">
+{% endblock %}
+
+{% block body %}
+
+<div style="padding: 30px">
+    <h1>登入</h1>
+
+    <!-- 印出flash的訊息 -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form method="post" action="/login">
+        <div class="form-group row">
+            <label for="user_id" class="col-3 col-form-label">使用者名稱</label>
+            <div class="col-9">
+                <input type="text" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                <!-- <small class="form-text">提示： 名字</small> -->
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-3 col-form-label">密碼</label>
+            <div class="col-9">
+                <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                <!-- <small class="form-text">提示： 生日</small> -->
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <button type="submit" class="btn btn-dark">登入</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
+
+{% endblock %}

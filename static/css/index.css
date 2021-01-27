@@ -1,0 +1,138 @@
+/* .p{
+    padding:24px;
+} */
+
+body{
+    height: 100vh;
+    background-color: rgba(0,0,0,0.05);
+}
+
+.info{
+    width:50%;
+    padding: 30px;
+}
+
+.wc{
+    padding:0px;
+}
+
+
+.container{
+    position: relative;
+    padding:30px 50px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container h1{
+    text-align: left;
+    padding: 12px 12px 12px 0;
+    font-weight: bold;
+    /* color: rgba(0,0,0,0.5);
+    text-shadow: 6px 6px 5px #000000; */
+}
+
+.form-group{
+    padding: 12px 12px 12px 0;
+    width: 30%;
+}
+
+@media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1600px;
+    }
+}
+
+.card{
+    width:95%;
+}
+
+
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    background-color: #FCFCFC;
+    /* vertical-align:middle; */
+    /* text-align: center; */
+    width: 80%;
+}
+
+.table td, .table th{
+    vertical-align:middle;
+    /* 自動換行 */
+    word-break: break-all; 
+    text-align: center;
+}
+
+/* nav, .page-item.active .page-link{
+    color: black;
+    border-color: black;
+    background-color: black;
+} */
+
+
+/* .table .thead-dark th{
+    vertical-align:middle;
+} */
+
+/* thead th{ */
+    /* table-layout: fixed; */
+    /* text-align: center; */
+/* } */
+
+.pagination-page-info {
+    padding: 1em;
+    padding-left: 20px;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    /* background: #6aa6ed; */
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+}
+
+.pagination{
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+
+#pieChart {
+    position:relative;
+    top:40%;
+    left:10px;
+    width:400px;
+    height: 400px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: black;         /*線條顏色*/
+    /* shape-rendering: auto; 讓線很細，比較像座標軸 */
+}
+.axis text {
+    font-size: 12px;
+    fill: black;
+}
+
+#tooltip{
+    position: absolute;
+    left: 20px; 
+    top:  100px; 
+    background: #fff;
+    width: 150px;
+    height: auto;
+    padding: 0px 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  }
+  #tooltip.hidden{
+    display: none;
+  } 

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<head>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/visual.css">
+</head>
+{% endblock %}
+
+
+{% block title %}DATA VISUALIZATION{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Data Visualization</h1>
+    <!-- <form action='/index' method="post"> -->
+    <!-- <div class='form-group'> -->
+    <!-- <select name="webName" id="webName" type='submit' class='form-control' required>
+        <option value="">請選擇板名</option>
+        {% for board in boardName:%}
+        <option value={{board}}>{{board}}</option>
+        {% endfor %}
+    </select> -->
+    <!-- </div> -->
+    <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+    <!-- <button type="submit" class='btn btn-dark'>查詢</button> -->
+    <!-- </form> -->
+    <div class="table-responsive">
+        <table class='table table-bordered table-hover text-center'>
+            <thead class='thead-dark'>
+                <tr>
+                    {% for webName in boardName:%}
+                    <th>{{webName}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in cnt: %}
+                <td>{{ i }}</td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class='chart'>
+        <div id="pieChart"></div>
+        <div id="barChart"></div>  
+    </div>
+    
+    <!-- <div id="tooltip" class="hidden">
+        <p><strong id="title">Hello</strong></p>
+        <p id="content">tooltip</p>
+    </div> -->
+    
+    {% endblock %}
+
+
+    {% block script %}
+    <script>
+        var data = {{ cnt }};
+        var boardName = {{ boardName| tojson}};
+    </script>
+    <!-- <script src='/static/js/pieChart.js'></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/queue.v1.min.js"></script>
+    <script>
+        var piechartDataUrl = "{{ url_for('get_piechart_data') }}";
+        var barchartDataUrl = "{{ url_for('get_barchart_data') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/pieChart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/barChart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/updateChart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% endblock %}
