@@ -30,22 +30,22 @@ function d3BarChartBase() {
 }
 
 function d3BarChart(datasetBarChart) {
-	var firstDatasetBarChart = datasetBarChosen(group, datasetBarChart);         	
+	var firstDatasetBarChart = datasetBarChosen(group, datasetBarChart);  
 	
 	var basics = d3BarChartBase();
 	
 	var margin = basics.margin,
 		width = basics.width,
-	   height = basics.height,
+	    height = basics.height,
 		colorBar = basics.colorBar,
         barPadding = basics.barPadding,
         misc = basics.misc
 		;
 					
-	var 	xScale = d3.scaleLinear()
-						.domain([0, firstDatasetBarChart.length])
-						.range([0, width])
-						;
+	var xScale = d3.scaleLinear()
+                    .domain([0, firstDatasetBarChart.length])
+                    .range([0, width])
+                    ;
 						
 	var yScale = d3.scaleLinear()
 		   .domain([0, d3.max(firstDatasetBarChart, function(d) { return d.measure; })])
